@@ -22,3 +22,7 @@ public struct MenuItem {
 extension MenuItem: Identifiable {
 	public var id: String { name }
 }
+
+extension MenuItem: Equatable {
+    
+}

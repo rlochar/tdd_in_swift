@@ -14,14 +14,3 @@ struct MenuRow: View {
 		Text(viewModel.name)
 	}
 }
-
-public struct MenuRowViewModel {
-	private let item: MenuItem
-	public var name: String {
-		return item.spicy ? item.name.appending(" 🌶️") : item.name
-	}
-
-	public init(item: MenuItem) {
-		self.item = item
-	}
-}

@@ -6,6 +6,7 @@
 //
 
 public struct MenuSection {
+    
 	public let category: String
 	public let items: [MenuItem]
 
@@ -17,4 +18,8 @@ public struct MenuSection {
 
 extension MenuSection: Identifiable {
 	public var id: String { category }
+}
+
+extension MenuSection: Equatable {
+    
 }
