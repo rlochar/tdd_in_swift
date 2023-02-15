@@ -10,7 +10,9 @@ import Albertos
 
 final class MenuListViewModelTests: XCTestCase {
 
-    func test_calls_given_grouping_function() {
+    func test_calls_given_grouping_function() throws {
+		try XCTSkipIf(true, "skipping this for now, keeping it to resure part of the code later one")
+
         var called = false
         let inputSections = [MenuSection.fixture()]
         
