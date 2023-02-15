@@ -16,7 +16,7 @@ public struct MenuListViewModel {
     }
     
     public init(menu: [MenuItem], menuGrouping: @escaping ([MenuItem]) -> [MenuSection] = groupMenuByCategory) {
-        self.menu = menu
+        self.menu = []
         self.grouping = menuGrouping
     }
 }
