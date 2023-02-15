@@ -9,7 +9,7 @@ import Combine
 public class MenuListViewModel: ObservableObject {
     @Published public private(set) var sections: [MenuSection]
     
-    public init(menu: [MenuItem], menuGrouping: @escaping ([MenuItem]) -> [MenuSection] = groupMenuByCategory) {
+    public init(menuFetching: MenuFetching, menuGrouping: @escaping ([MenuItem]) -> [MenuSection] = groupMenuByCategory) {
 		sections = menuGrouping([])
     }
 }

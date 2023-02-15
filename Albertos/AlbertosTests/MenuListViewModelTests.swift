@@ -21,7 +21,7 @@ final class MenuListViewModelTests: XCTestCase {
             return inputSections
         }
         
-        let viewModel = MenuListViewModel(menu: [.fixture()], menuGrouping: spyClosure)
+        let viewModel = MenuListViewModel(menuFetching: MenuFetchingPlaceHolder(), menuGrouping: spyClosure)
         let sections = viewModel.sections
         
         XCTAssertTrue(called)
@@ -29,7 +29,7 @@ final class MenuListViewModelTests: XCTestCase {
     }
 
 	func test_when_fetching_starts_publishes_empty_menu() {
-		let viewModel = MenuListViewModel(menu: [.fixture()])
+		let viewModel = MenuListViewModel(menuFetching: MenuFetchingPlaceHolder())
 
 		XCTAssertTrue(viewModel.sections.isEmpty)
 	}
