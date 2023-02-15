@@ -5,7 +5,7 @@
 //  Created by Roar Lochar on 10/02/2023.
 //
 
-let menu = [
+public let menu = [
 	MenuItem(category: "starters", name: "Caprese salad"),
 	MenuItem(category: "starters", name: "Arancini balls"),
 	MenuItem(category: "pastas", name: "Penne all'Arrabbiata", spicy: true),

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuList: View {
-	let viewModel: MenuListViewModel
+	@ObservedObject var viewModel: MenuListViewModel
 
     var body: some View {
 		List {
