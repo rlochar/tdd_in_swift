@@ -23,6 +23,7 @@
 		582F175E299BBA3500AF9185 /* MenuListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F175D299BBA3500AF9185 /* MenuListViewModelTests.swift */; };
 		58B996BF299BC28900AABCD8 /* MenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B996BE299BC28900AABCD8 /* MenuListViewModel.swift */; };
 		58B996C1299BC29F00AABCD8 /* MenuRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B996C0299BC29F00AABCD8 /* MenuRowViewModel.swift */; };
+		58CFFDAA299CFF96002FF944 /* MenuFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CFFDA9299CFF96002FF944 /* MenuFetching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		582F175D299BBA3500AF9185 /* MenuListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListViewModelTests.swift; sourceTree = "<group>"; };
 		58B996BE299BC28900AABCD8 /* MenuListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListViewModel.swift; sourceTree = "<group>"; };
 		58B996C0299BC29F00AABCD8 /* MenuRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowViewModel.swift; sourceTree = "<group>"; };
+		58CFFDA9299CFF96002FF944 /* MenuFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFetching.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				581A205F2996762600A4FA0F /* MenuData.swift */,
+				58CFFDA9299CFF96002FF944 /* MenuFetching.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			files = (
 				581A205529966BB100A4FA0F /* MenuItem.swift in Sources */,
 				581A206729968DC000A4FA0F /* MenuRow.swift in Sources */,
+				58CFFDAA299CFF96002FF944 /* MenuFetching.swift in Sources */,
 				58B996C1299BC29F00AABCD8 /* MenuRowViewModel.swift in Sources */,
 				581A205729966BBE00A4FA0F /* MenuSection.swift in Sources */,
 				581A205A29966C9F00A4FA0F /* MenuList.swift in Sources */,
