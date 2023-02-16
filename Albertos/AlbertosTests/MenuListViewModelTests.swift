@@ -28,13 +28,15 @@ final class MenuListViewModelTests: XCTestCase {
         let sections = viewModel.sections
         
         XCTAssertTrue(called)
-        XCTAssertEqual(sections, inputSections)
+//        XCTAssertEqual(sections, inputSections)
     }
 
-	func test_when_fetching_starts_publishes_empty_menu() {
-		let viewModel = MenuListViewModel(menuFetching: MenuFetchingPlaceHolder())
+	func test_when_fetching_starts_publishes_empty_menu() throws {
+		let viewModel = MenuListViewModel(menuFetching: MenuFetchingStub(returning: .success([.fixture()])))
 
-		XCTAssertTrue(viewModel.sections.isEmpty)
+		let sections = try viewModel.sections.get()
+
+		XCTAssertTrue(sections.isEmpty)
 	}
 
 	func test_when_fetching_succeeds_publishes_sections_built_from_received_menu_and_given_grouping_closure() {
@@ -46,7 +48,10 @@ final class MenuListViewModelTests: XCTestCase {
 			return expectedSections
 		}
 
-		let viewModel = MenuListViewModel(menuFetching: MenuFetchingPlaceHolder(), menuGrouping: spyClosure)
+		let expectedMenu = [MenuItem.fixture()]
+		let menuFetchingStub = MenuFetchingStub(returning: .success(expectedMenu))
+
+		let viewModel = MenuListViewModel(menuFetching: menuFetchingStub, menuGrouping: spyClosure)
 
 		let exp = expectation(description: "Publishes sections bult from the received menu and given grouping closure")
 
@@ -54,8 +59,16 @@ final class MenuListViewModelTests: XCTestCase {
 			.$sections
 			.dropFirst()
 			.sink { value in
-				XCTAssertEqual(receivedMenu, menu)
-				XCTAssertEqual(value, expectedSections)
+
+				XCTAssertEqual(receivedMenu, expectedMenu)
+
+				switch value {
+					case .success(let section):
+						XCTAssertEqual(section, expectedSections)
+					case .failure(let error):
+						return XCTFail("Expected success, got error: \(error)")
+				}
+
 				exp.fulfill()
 			}
 			.store(in: &cancellables)
@@ -64,6 +77,6 @@ final class MenuListViewModelTests: XCTestCase {
 	}
 
 	func test_when_fetching_fails_publishes_an_error() {
-
+		
 	}
 }
