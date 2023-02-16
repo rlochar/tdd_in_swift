@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct TerrError: Equatable, Error {
+struct TestError: Equatable, Error {
 	let id: Int
 }
