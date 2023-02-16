@@ -26,6 +26,7 @@
 		58CFFDAA299CFF96002FF944 /* MenuFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CFFDA9299CFF96002FF944 /* MenuFetching.swift */; };
 		58CFFDAD299D03B0002FF944 /* MenuFetchingPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CFFDAC299D03B0002FF944 /* MenuFetchingPlaceHolder.swift */; };
 		58CFFDB0299D3B21002FF944 /* MenuFetchingStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CFFDAF299D3B21002FF944 /* MenuFetchingStub.swift */; };
+		58CFFDB2299E263A002FF944 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CFFDB1299E263A002FF944 /* TestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		58CFFDA9299CFF96002FF944 /* MenuFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFetching.swift; sourceTree = "<group>"; };
 		58CFFDAC299D03B0002FF944 /* MenuFetchingPlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFetchingPlaceHolder.swift; sourceTree = "<group>"; };
 		58CFFDAF299D3B21002FF944 /* MenuFetchingStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFetchingStub.swift; sourceTree = "<group>"; };
+		58CFFDB1299E263A002FF944 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			children = (
 				581A20622996798000A4FA0F /* MenuItem+Fixture.swift */,
 				581A20642996850900A4FA0F /* MenuSection+Fixture.swift */,
+				58CFFDB1299E263A002FF944 /* TestError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				58CFFDB0299D3B21002FF944 /* MenuFetchingStub.swift in Sources */,
 				581A206929968F1D00A4FA0F /* MenuRowViewModelTests.swift in Sources */,
 				581A204D299649A900A4FA0F /* MenuGroupingTests.swift in Sources */,
+				58CFFDB2299E263A002FF944 /* TestError.swift in Sources */,
 				582F175E299BBA3500AF9185 /* MenuListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
