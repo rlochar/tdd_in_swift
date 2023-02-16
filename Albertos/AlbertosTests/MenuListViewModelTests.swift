@@ -28,7 +28,13 @@ final class MenuListViewModelTests: XCTestCase {
         let sections = viewModel.sections
         
         XCTAssertTrue(called)
-//        XCTAssertEqual(sections, inputSections)
+		switch sections {
+			case .success(let sections):
+				XCTAssertEqual(sections, inputSections)
+			case .failure(let error):
+				XCTFail("Expected .success type, got error: \(error)")
+		}
+
     }
 
 	func test_when_fetching_starts_publishes_empty_menu() throws {
