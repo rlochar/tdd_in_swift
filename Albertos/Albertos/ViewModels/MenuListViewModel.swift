@@ -16,7 +16,13 @@ public class MenuListViewModel: ObservableObject {
 		menuFetching
 			.fetchMenu()
 			.sink(
-				receiveCompletion: { _ in },
+				receiveCompletion: { [weak self] completion in
+					guard case .failure(let error) = completion else {
+						return
+					}
+
+					self?.sections = .failure(error)
+				},
 				receiveValue: { [weak self] value in
 					self?.sections = .success(menuGrouping(value))
 				}

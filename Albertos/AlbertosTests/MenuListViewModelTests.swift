@@ -83,6 +83,24 @@ final class MenuListViewModelTests: XCTestCase {
 	}
 
 	func test_when_fetching_fails_publishes_an_error() {
-		
+		let expectedError = TestError(id: 123)
+		let menuFetchingStub = MenuFetchingStub(returning: .failure(expectedError))
+		let viewModel = MenuListViewModel(menuFetching: menuFetchingStub, menuGrouping: { _ in [] })
+		let exp = expectation(description: "Publishes an error")
+
+		viewModel
+		.$sections
+		.dropFirst()
+		.sink { value in
+			guard case .failure(let error) = value else {
+				return XCTFail("Expected failing Result, got value: \(value)")
+			}
+
+			XCTAssertEqual(error as? TestError, expectedError)
+			exp.fulfill()
+		}
+		.store(in: &cancellables)
+
+		wait(for: [exp], timeout: 1)
 	}
 }
